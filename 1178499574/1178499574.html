@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectando con WhatsApp...</title>
+
+    <!-- Meta Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '612226704779507'); // ID del Pixel
+        fbq('track', 'ViewContent'); // Evento cuando alguien entra a la página
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=612226704779507&ev=ViewContent&noscript=1"/>
+    </noscript>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mensaje = encodeURIComponent("Hola, quisiera un usuario. ¿En qué consiste el bono de bienvenida?");
+            const whatsappURL = `https://wa.me/5491178499574?text=${mensaje}`;
+
+            // Registrar evento de Lead antes de redirigir
+            fbq('track', 'Lead');
+
+            // Redirigir inmediatamente a WhatsApp
+            window.location.href = whatsappURL;
+        });
+    </script>
+
+</head>
+<body>
+</body>
+</html>
+
